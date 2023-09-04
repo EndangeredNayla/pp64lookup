@@ -1,15 +1,15 @@
-{{define "history"}}
+{{define "files"}}
 <!DOCTYPE html>
 <html>
 {{template "head" .}}
 
 <body class="mdui-theme-accent-red mdui-theme-primary-red" style="padding-top: 20px">
     <div class="mdui-container px-3 my-5">
-        <p class="mdui-text-center"><a href="/curseforge" style="text-decoration: none;font-size: xx-large;"
-                class="mdui-text-color-theme-text"><b>CurseForge</b> 搜索</a></p>
+        <p class="mdui-text-center"><a href="/" style="text-decoration: none;font-size: xx-large;"
+                class="mdui-text-color-theme-text"><b>CurseLite</b></a></p>
         <h1 class="mdui-typo"><a href="{{ .WebsiteURL}}" target="_blank" rel="noopener noreferrer">{{.Name}}</a></h1>
         <div style="padding-bottom: 15px;">
-            <a href="/curseforge" style="color: black;text-decoration: none">
+            <a href="/" style="color: black;text-decoration: none">
                 <div class="mdui-chip">
                     <span class="mdui-chip-title">Home</span>
                 </div>

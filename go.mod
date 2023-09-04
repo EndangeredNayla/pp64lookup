@@ -10,6 +10,7 @@ require (
 
 require (
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/endangerednayla/cursemodownload v0.0.0-20230904211000-0b8a0422e1de // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	golang.org/x/sys v0.0.0-20220405052023-b1e9470b6e64 // indirect
 )

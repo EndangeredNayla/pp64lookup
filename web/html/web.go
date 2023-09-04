@@ -235,6 +235,11 @@ func History(w http.ResponseWriter, req *http.Request) {
 			http.Error(w, err.Error(), 500)
 			return
 		}
+		tdlist = append(tdlist, template.HTML(template.HTMLEscapeString(releaseType[v.ReleaseType])))
+		d := dependenciespase(v.Dependencies)
+		if d == "" {
+			d = "None"
+		}
 		tdlist = append(tdlist, template.HTML(strconv.FormatInt(atime.Unix(), 10)))
 		d := dependenciespase(v.Dependencies)
 		if d == "" {
@@ -260,7 +265,7 @@ func History(w http.ResponseWriter, req *http.Request) {
 	hs.parse(w)
 }
 
-var files = []string{"File Name", "files", "File Date", "Dependencies"}
+var files = []string{"File Name", "Release Type", "File Date", "Modloader", "Dependencies"}
 
 var releaseType = map[int]string{
 	1: "Release",

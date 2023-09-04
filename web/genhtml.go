@@ -38,8 +38,8 @@ type resultslist struct {
 }
 
 func (h *historyS) parse(w http.ResponseWriter) {
-	h.Title += " - CurseForge mod"
-	err := t.ExecuteTemplate(w, "history", h)
+	h.Title += " - CurseForge Mod"
+	err := t.ExecuteTemplate(w, "files", h)
 	if err != nil {
 		log.Println(err)
 	}
@@ -49,7 +49,7 @@ func (p *pageS) parse(w http.ResponseWriter, nextlink string) {
 	if len(p.List) == 20 || nextlink != "" {
 		p.Link = nextlink
 	}
-	p.Title += " - CurseForge mod"
+	p.Title += " - CurseForge Mod"
 	err := t.ExecuteTemplate(w, "page", p)
 	if err != nil {
 		log.Println(err)
@@ -69,7 +69,7 @@ func init() {
 		Title       string
 		Description string
 	}
-	err = t.ExecuteTemplate(w, "index", Title{Title: "CurseForge 搜索 - 搜索 CurseForge 上的东西并下载", Description: "搜索 CurseForge 上的东西并下载。"})
+	err = t.ExecuteTemplate(w, "index", Title{Title: "CurseLite - Frontend", Description: "Frontend for CurseForge."})
 	if err != nil {
 		panic(err)
 	}

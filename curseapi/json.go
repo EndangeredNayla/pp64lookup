@@ -41,6 +41,7 @@ type Files struct {
 	Dependencies []Dependencies `json:"dependencies"`
 	DownloadUrl  string         `json:"downloadUrl"`
 	GameVersion  []string       `json:"gameVersions"`
+	GameVersion2 []string		`json:gameVersionName`
 	ReleaseType  int            `json:"releaseType"`
 }
 

@@ -15,19 +15,19 @@ import (
 
 func main() {
 	r := http.NewServeMux()
-	r.HandleFunc("/curseforge", web.Index)
-	r.HandleFunc("/curseforge/s", web.WebRoot)
-	r.HandleFunc("/curseforge/info", web.Info)
-	r.HandleFunc("/curseforge/download", web.Getdownloadlink)
-	r.HandleFunc("/curseforge/history", web.History)
+	r.HandleFunc("/", web.Index)
+	r.HandleFunc("/s", web.WebRoot)
+	r.HandleFunc("/info", web.Info)
+	r.HandleFunc("/download", web.Getdownloadlink)
+	r.HandleFunc("/files", web.History)
 	s := http.Server{
-		Addr:         "127.0.0.1:8082",
+		Addr:         "127.0.0.1:443",
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 20 * time.Second,
 		Handler:      r,
 	}
 	fmt.Println("WebServer Starting...")
-	browser.OpenURL("http://127.0.0.1:8082/curseforge")
+	browser.OpenURL("http://127.0.0.1:443")
 	log.Println(s.ListenAndServe())
 }
 

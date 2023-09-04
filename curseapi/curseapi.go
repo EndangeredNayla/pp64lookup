@@ -10,7 +10,7 @@ import (
 
 //From https://gaz492.github.io/TwitchAPI/
 
-const api = `https://api.curseforge.com/v1`
+const api = `https://api.curse.tools/v1/cf`
 
 func Searchmod(key string, index string, sectionId int) ([]Modinfo, error) {
 	aurl := api + `/mods/search?categoryId=0&gameId=432&index=` + index + `&pageSize=20&searchFilter=` + url.QueryEscape(key) + `&classId=` + strconv.Itoa(sectionId) + `&sortField=2&sortOrder=desc`
