@@ -250,7 +250,7 @@ func History(w http.ResponseWriter, req *http.Request) {
 		Version:          ver,
 		WebsiteURL:       info.Links.WebsiteUrl,
 		VersionsListLink: "/info?id=" + id,
-		Tr:               files,
+		Tr:               tdname,
 		List:             r,
 		headS: headS{
 			Description: info.Name + " - " + ver + " - " + info.Summary + " - files download",
@@ -260,7 +260,7 @@ func History(w http.ResponseWriter, req *http.Request) {
 	hs.parse(w)
 }
 
-var files = []string{"File Name", "files", "File Date", "Dependencies"}
+var tdname = []string{"File Name", "files", "File Date", "Dependencies"}
 
 var releaseType = map[int]string{
 	1: "Release",
