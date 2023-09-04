@@ -13,7 +13,7 @@ import (
 const api = `https://api.curse.tools/v1/cf`
 
 func Searchmod(key string, index string, sectionId int) ([]Modinfo, error) {
-	aurl := api + `/mods/search?categoryId=0&gameId=432&index=` + index + `&pageSize=20&searchFilter=` + url.QueryEscape(key) + `&classId=` + strconv.Itoa(sectionId) + `&sortField=2&sortOrder=desc`
+	aurl := api + `/mods/search?categoryId=0&gameId=432&index=` + index + `&pageSize=40&searchFilter=` + url.QueryEscape(key) + `&classId=` + strconv.Itoa(sectionId) + `&sortField=2&sortOrder=desc`
 	b, err := httpcache(aurl, acache)
 	if err != nil {
 		return nil, fmt.Errorf("Searchmod: %w", err)
@@ -54,7 +54,7 @@ func AddonInfo(addonID string) (Modinfo, error) {
 }
 
 func Addonfiles(addonID, gameVersion string) ([]Files, error) {
-	aurl := api + `/mods/` + addonID + `/files?pageSize=10000&gameVersion=` + gameVersion
+	aurl := api + `/mods/` + addonID + `/files?pageSize=50&gameVersion=` + gameVersion
 	b, err := httpcache(aurl, acache)
 	if err != nil {
 		return nil, fmt.Errorf("Addonfiles: %w", err)

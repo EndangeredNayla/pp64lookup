@@ -11,16 +11,15 @@
         <h1 class="mdui-typo"><a href="{{ .WebsiteURL}}" target="_blank" rel="noopener noreferrer">{{ .Name }}</a></h1>
         {{else}}
         <h1>
-            <center>
             <font size="4">Results for</font>
-            <font size="6">{{ .Name }}</font></center>
+            <font size="6">{{ .Name }}</font>
         </h1>
         {{end}}
-        <div style="display: grid; corner-radius: 24px; grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); grid-gap: 15px; align-items: center;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(5em)); grid-gap: 10px; align-items: flex-start; padding-top: 0px; padding-bottom: 0px">
             {{range .List}}
             <a href="{{ .Link}}" style="text-decoration: none">
-                <div class="mdui-card mdui-hoverable" style="border-radius: 10px;">
-                    <div class="mdui-card-primary mdui-ripple" style="padding-top: 16px">
+                <div class="mdui-card mdui-hoverable" style="border-radius: 16px;">
+                    <div class="mdui-card-primary mdui-ripple" style="padding-left: 10px">
                         <div class="mdui-card-primary-title">
                             <h3 class="mdui-typo mdui-text-color-theme-accent">{{ .Title}}</h3>
                         </div>

@@ -46,7 +46,7 @@ func (h *historyS) parse(w http.ResponseWriter) {
 }
 
 func (p *pageS) parse(w http.ResponseWriter, nextlink string) {
-	if len(p.List) == 20 || nextlink != "" {
+	if len(p.List) == 50 {
 		p.Link = nextlink
 	}
 	p.Title += " - CurseForge Mod"
