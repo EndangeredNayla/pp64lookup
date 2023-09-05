@@ -28,7 +28,7 @@ func main() {
 	}
 	fmt.Println("WebServer Starting...")
 	//browser.OpenURL("http://127.0.0.1:443")
-	log.Println(s.ListenAndServe())
+	log.Println(s.ListenAndServeTLS("/certs/cert.crt", "/certs/cert.key"))
 }
 
 var apiaddr string
