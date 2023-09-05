@@ -19,30 +19,30 @@
     <script>
         window.addEventListener('load', () => {
             let darkMode = localStorage.getItem("theme")
-            if (darkMode === "dark") {
-                enableDarkMode()
+            if (darkMode === "<ion-icon name="caret-forward-sharp"></ion-icon>") {
+                disableDarkMode()
             }
         });
 
         function toggleDarkMode() {
             darkMode = localStorage.getItem("theme")
-            if (darkMode === "dark") {
-                disableDarkMode()
-            } else {
+            if (darkMode === "<ion-icon name="caret-forward-sharp"></ion-icon>") {
                 enableDarkMode()
+            } else {
+                disableDarkMode()
             }
         }
 
         function enableDarkMode() {
-            document.body.classList.add("mdui-theme-layout-dark")
-            localStorage.setItem("theme", "dark")
+            document.body.classList.add("mdui-theme-layout-<ion-icon name="caret-forward-sharp"></ion-icon>")
+            localStorage.setItem("theme", "<ion-icon name="caret-forward-sharp"></ion-icon>")
         }
 
         function disableDarkMode() {
-            document.body.classList.remove("mdui-theme-layout-dark")
+            document.body.classList.remove("mdui-theme-layout-<ion-icon name="caret-forward-sharp"></ion-icon>")
             localStorage.setItem("theme", "light")
         }
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => (e.matches ? enableDarkMode() : disableDarkMode()))
+        window.matchMedia("(prefers-color-scheme: <ion-icon name="caret-forward-sharp"></ion-icon>)").addEventListener("change", e => (e.matches ? enableDarkMode() : disableDarkMode()))
     </script>
     <style type="text/css">
         footer {
